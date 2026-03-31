@@ -9,18 +9,27 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { label: "Men haqimda", href: "#about" },
-  { label: "Ko'nikmalarim", href: "#skills" },
-  { label: "Loyihalarim", href: "#projects" },
-  { label: "Tajribam", href: "#experience" },
-  { label: "Bog'lanish", href: "#contact" },
+  { label: "Men haqimda", href: "about" },
+  { label: "Ko'nikmalarim", href: "skills" },
+  { label: "Loyihalarim", href: "projects" },
+  { label: "Tajribam", href: "experience" },
+  { label: "Bog'lanish", href: "contact" },
 ];
 
 export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const scrollToSection = (id:string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
 
+    const yOffset = -80; // navbar balandligi (o‘zingga qarab o‘zgartir)
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -39,10 +48,9 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (id: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(id);
   };
 
   return (
