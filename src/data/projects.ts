@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: "Nasiya Savdo - Admin Panel",
     description:
       "React + TypeScript da yozilgan zamonaviy admin paneli. Shadcn UIdan komponentlar, Backend Api To'liq CRUD, Lucide-react iconlardan foydalanilgan. To'liq responsive va foydalanuvchi uchun qulay interfeysga ega. Loyihani Storybook yordamida hujjatlashtirish va test qilish rejalashtirilgan.",
-    tech: ["React", "TypeScript", "Shadcn UI", "Lucide-React", "CSS Variables"],
+    tech: ["React", "TypeScript", "Shadcn UI", "Tailwind CSS", "Lucide-React", "CSS Variables"],
     github: "https://github.com/Javohir9026/nasiya-savdo-front-end",
     live: "https://nasiya-savdo-admin-panel.vercel.app/",
     featured: true,
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Nasiya Savdo – landing page",
     description:
       "React + TypeScript da yozilgan zamonaviy landing page. Shadcn UIdan komponentlar, Lucide-react iconlardan foydalanilgan. To'liq responsive va foydalanuvchi uchun qulay interfeysga ega.",
-    tech: ["React", "TypeScript", "Shadcn UI", "Lucide-React", "CSS Variables"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI", "Lucide-React", "CSS Variables"],
     github: "https://github.com/Javohir9026/NasiyaLandingPage",
     live: "https://nasiya-landing-page-qrzr.vercel.app/",
     featured: true,

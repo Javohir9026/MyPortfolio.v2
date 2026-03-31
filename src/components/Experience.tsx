@@ -20,7 +20,7 @@ const timeline: TimelineItem[] = [
     bullets: [
       "2024 yilda avval Foundatuon XN1 guruhida o'qidim va u yerda Kompyuter Savodxonligi, Dasturlash Tushunchasini O'rgandim.",
       "Foundationni tugatgach, Frontend XN1 guruhiga o'tdim va u yerda React, Next.js, TypeScript, va zamonaviy frontend texnologiyalarini chuqur o'rgandim.",
-      "Frontend XN1 tugatgach, amaliyot bosqichiga o'tdim va real frontend loyihalarida ishlash orqali tajribamni oshirdim .",
+      "Frontend XN1 guruhini tugatgach, amaliyot bosqichiga o'tdim va real frontend loyihalarida ishlash orqali tajribamni oshirdim .",
       "2025 yil To'liq kursni muvaffaqiyatli tamomladim va sertifikat oldim, bu esa mening frontend sohasidagi bilimlarim va ko'nikmalarimni tasdiqlaydi.",
     ],
   },

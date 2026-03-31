@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <a
               href="#"
               onClick={(e) => {

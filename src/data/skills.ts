@@ -13,7 +13,7 @@ export const skillCategories: SkillCategory[] = [
     skills: ['React', 'Next.js', 'Framer Motion', 'React Query', 'Zustand', 'Redux Toolkit'],
   },
   {
-    label: 'Style va UI Kitlar',
+    label: 'Style & UI Kitlar',
     skills: ['Tailwind CSS', 'CSS Modules', 'Styled Components', 'Radix UI', 'Headless UI', 'Shadcn UI'],
   },
   {
@@ -25,7 +25,7 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Node.js', 'Express', 'REST APIs', 'GraphQL'],
   },
   {
-    label: '"Dizayn & Ish uslubi"',
+    label: 'Dizayn & Ish uslubi',
     skills: ['Figma', 'Git','GitHub', 'Notion'],
   },
 ]
