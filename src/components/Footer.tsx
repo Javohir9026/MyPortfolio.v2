@@ -1,4 +1,4 @@
-import { Github, Linkedin, Send, Heart, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Send, Mail, Phone } from "lucide-react";
 
 const socials = [
   { icon: Github, href: "https://github.com/Javohir9026", label: "GitHub" },
@@ -21,8 +21,6 @@ const navLinks = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-cream-200 dark:border-ink-700 bg-cream-50 dark:bg-ink-900">
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
