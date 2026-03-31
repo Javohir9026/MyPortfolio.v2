@@ -21,12 +21,26 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // 🔥 UNIVERSAL SCROLL FUNCTION (mobile + desktop stable)
+  const scrollToSection = (href: string) => {
+    const el = document.querySelector(href);
+    if (!el) return;
+
+    const yOffset = -80;
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
       for (const link of NAV_LINKS) {
-        const el = document.getElementById(link.href);
+        const el = document.getElementById(link.href.replace("#", ""));
         if (!el) continue;
 
         const rect = el.getBoundingClientRect();
@@ -41,6 +55,15 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (href: string) => {
+    scrollToSection(href);
+
+    // 🔥 mobile animation bug fix
+    setTimeout(() => {
+      setMobileOpen(false);
+    }, 150);
+  };
 
   return (
     <header
@@ -71,12 +94,10 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
               href={link.href}
               onClick={(e) => {
                 e.preventDefault();
-                document
-                  .querySelector(link.href)
-                  ?.scrollIntoView({ behavior: "smooth" });
+                handleNavClick(link.href);
               }}
               className={`font-mono text-xs tracking-wide transition-colors duration-200 ${
-                activeSection === link.href.replace("#", "")
+                activeSection === link.href
                   ? "text-accent"
                   : "text-ink-500 dark:text-cream-200/60 hover:text-ink-900 dark:hover:text-cream-100"
               }`}
@@ -117,12 +138,10 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    document
-                      .querySelector(link.href)
-                      ?.scrollIntoView({ behavior: "smooth" });
+                    handleNavClick(link.href);
                   }}
                   className={`font-mono text-xs tracking-wide transition-colors duration-200 ${
-                    activeSection === link.href.replace("#", "")
+                    activeSection === link.href
                       ? "text-accent"
                       : "text-ink-500 dark:text-cream-200/60 hover:text-ink-900 dark:hover:text-cream-100"
                   }`}
