@@ -20,25 +20,27 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const scrollToSection = (id:string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-    const yOffset = -80; // navbar balandligi (o‘zingga qarab o‘zgartir)
-    const y =
-      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
+    el.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = NAV_LINKS.map((link) => link.href.replace("#", ""));
-      for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(id);
+      for (const link of NAV_LINKS) {
+        const el = document.getElementById(link.href);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          setActiveSection(link.href);
           break;
         }
       }
