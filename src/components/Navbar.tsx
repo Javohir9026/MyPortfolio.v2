@@ -20,15 +20,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
 
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -49,14 +41,6 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleNavClick = (id: string) => {
-    scrollToSection(id);
-
-    setTimeout(() => {
-      setMobileOpen(false);
-    }, 150);
-  };
 
   return (
     <header
@@ -82,9 +66,15 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNavClick(link.href)}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector(link.href)
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
               className={`font-mono text-xs tracking-wide transition-colors duration-200 ${
                 activeSection === link.href.replace("#", "")
                   ? "text-accent"
@@ -92,7 +82,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
               }`}
             >
               {link.label}
-            </button>
+            </a>
           ))}
         </nav>
 
@@ -122,17 +112,23 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
           >
             <nav className="flex flex-col px-6 py-4 gap-4">
               {NAV_LINKS.map((link) => (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className={`text-left font-mono text-sm tracking-wide py-1 transition-colors ${
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector(link.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`font-mono text-xs tracking-wide transition-colors duration-200 ${
                     activeSection === link.href.replace("#", "")
                       ? "text-accent"
-                      : "text-ink-600 dark:text-cream-200/70 hover:text-ink-900 dark:hover:text-cream-100"
+                      : "text-ink-500 dark:text-cream-200/60 hover:text-ink-900 dark:hover:text-cream-100"
                   }`}
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
             </nav>
           </motion.div>
