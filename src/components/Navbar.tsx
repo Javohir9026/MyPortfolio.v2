@@ -58,11 +58,6 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
   const handleNavClick = (href: string) => {
     scrollToSection(href);
-
-    // 🔥 mobile animation bug fix
-    setTimeout(() => {
-      setMobileOpen(false);
-    }, 150);
   };
 
   return (
