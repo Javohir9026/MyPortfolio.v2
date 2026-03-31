@@ -9,11 +9,11 @@ interface NavbarProps {
 }
 
 const NAV_LINKS = [
-  { label: "Men haqimda", href: "about" },
-  { label: "Ko'nikmalarim", href: "skills" },
-  { label: "Loyihalarim", href: "projects" },
-  { label: "Tajribam", href: "experience" },
-  { label: "Bog'lanish", href: "contact" },
+  { label: "Men haqimda", href: "#about" },
+  { label: "Ko'nikmalarim", href: "#skills" },
+  { label: "Loyihalarim", href: "#projects" },
+  { label: "Tajribam", href: "#experience" },
+  { label: "Bog'lanish", href: "#contact" },
 ];
 
 export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
@@ -51,8 +51,11 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   }, []);
 
   const handleNavClick = (id: string) => {
-    setMobileOpen(false);
     scrollToSection(id);
+
+    setTimeout(() => {
+      setMobileOpen(false);
+    }, 150);
   };
 
   return (
