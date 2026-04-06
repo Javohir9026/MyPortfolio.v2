@@ -18,7 +18,7 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -28,14 +28,42 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate async submit
-    setTimeout(() => {
-      setLoading(false);
+
+    const TOKEN = "8301059320:AAESNKdSwxs6i3bOOFeWhv5CNuzjdpGuzys"; // <-- shu yerga qo'yasan
+    const CHAT_ID = "5653608874"; // <-- shu yerga qo'yasan
+
+    const text = `
+<b>📩 Yangi murojat</b>
+
+<b>👤 Ism:</b> ${form.name}
+<b>📞 Telefon Raqam:</b> ${form.phone}
+<b>💬 Xabar:</b>
+${form.message}
+`;
+
+    try {
+      await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text,
+          parse_mode: "HTML",
+        }),
+      });
+
       setSubmitted(true);
-    }, 1200);
+      setForm({ name: "", phone: "", message: "" });
+    } catch (error) {
+      alert("Xatolik yuz berdi 😢");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass =
@@ -102,11 +130,11 @@ export default function Contact() {
                         Emailingiz
                       </label>
                       <input
-                        type="email"
-                        name="email"
-                        value={form.email}
+                        type="text"
+                        name="phone"
+                        value={form.phone}
                         onChange={handleChange}
-                        placeholder="example@gmail.com"
+                        placeholder="+998 90 123 45 67"
                         required
                         className={inputClass}
                       />
@@ -200,8 +228,8 @@ export default function Contact() {
                   <span className="text-ink-900 dark:text-cream-100 font-medium">
                     24 soat ichida
                   </span>{" "}
-                  javob beraman. Shoshilinch murojaatlar uchun Qo'ngiroq eng tezkor
-                  usul.
+                  javob beraman. Shoshilinch murojaatlar uchun Qo'ngiroq eng
+                  tezkor usul.
                 </p>
               </div>
             </div>

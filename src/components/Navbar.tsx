@@ -52,6 +52,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
       }
     };
 
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
