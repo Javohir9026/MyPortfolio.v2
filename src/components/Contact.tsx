@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { UzPhoneInput } from "./UzphoneInput";
 
 const socials = [
   { icon: Github, href: "https://github.com/Javohir9026", label: "GitHub" },
@@ -40,8 +41,7 @@ export default function Contact() {
 
 <b>👤 Ism:</b> ${form.name}
 <b>📞 Telefon Raqam:</b> ${form.phone}
-<b>💬 Xabar:</b>
-${form.message}
+<b>💬 Xabar:</b> ${form.message}
 `;
 
     try {
@@ -129,13 +129,12 @@ ${form.message}
                       <label className="block font-mono text-xs tracking-wide text-ink-400 dark:text-cream-200/40 mb-2 uppercase">
                         Emailingiz
                       </label>
-                      <input
-                        type="text"
+                      <UzPhoneInput
                         name="phone"
                         value={form.phone}
-                        onChange={handleChange}
-                        placeholder="+998 90 123 45 67"
-                        required
+                        onChange={(val) =>
+                          setForm((prev) => ({ ...prev, phone: val }))
+                        }
                         className={inputClass}
                       />
                     </div>
