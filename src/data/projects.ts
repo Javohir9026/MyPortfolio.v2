@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "PlayShoke - CS2 o'yinini o'ynash va mashq qilish uchun mo'ljallangan trening serverlari. Foydalanuvchilar uchun qulay interfeys, tezkor javob berish va o'yin ichidagi tajribani yaxshilashga qaratilgan. Loyiha Hozircha Backendga to'liq ulanmagan va faqat frontend qismi mavjud. Keyinchalik Real Loyiha qilish rejalashtirilgan.",
     tech: ["Next.js", "TypeScript", "MockData", "CSS Modules", "Tailwind CSS"],
     github: "https://github.com/Javohir9026/PlayShoke",
-    live: "https://play-shoke-git-main-amanbayevjavohir94-7008s-projects.vercel.app/",
+    live: "https://play-shoke-gules.vercel.app/",
     featured: false,
   },
 ];
