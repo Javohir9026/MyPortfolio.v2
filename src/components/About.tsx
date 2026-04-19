@@ -62,7 +62,7 @@ export default function About() {
 
               <div className="pt-2">
                 <a
-                  href="/Javohir_Amanbayev_Rezyume.pdf"
+                  href="/Amanbayev_Javohir_Resume.pdf"
                   className="btn-outline"
                   download
                 >
