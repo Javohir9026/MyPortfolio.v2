@@ -119,7 +119,7 @@ export default function Hero() {
                 <div className="absolute inset-0 rounded-full ring-2 ring-accent/60 ring-offset-4 ring-offset-cream-50 dark:ring-offset-ink-900 z-10" />
 
                 <img
-                  src="/profile.jpg"
+                  src="/profile.png"
                   alt="Javohir Amanbayev – Frontend Developer"
                   className="w-full h-full rounded-full object-cover object-top"
                 />
