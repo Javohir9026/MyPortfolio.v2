@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface TimelineItem {
@@ -26,8 +26,8 @@ const timeline: TimelineItem[] = [
   },
   {
     type: "work",
-    title: "Frontend Developer",
-    org: "Najot Ta'lim - START",
+    title: "Najot Ta'lim - START",
+    org: "Remote Team",
     period: "2025 - 2026",
     location: "Remote",
     bullets: [
@@ -38,9 +38,9 @@ const timeline: TimelineItem[] = [
   },
   {
     type: "work",
-    title: "Junior Web Developer",
-    org: "EducationHub",
-    period: "2026 – hozirgi vaqtgacha",
+    title: "EduCationHub",
+    org: "freelance",
+    period: "2026 Yanvar – 2026 Iyul",
     location: "Uzbekistan, Xorazm",
     bullets: [
       "2026 yil boshidan yangi Start-up EducationHubda Junior Web Developer sifatida ishlay boshladim.",
@@ -48,11 +48,28 @@ const timeline: TimelineItem[] = [
       "Hozirda Bu loyihani Yakunlash bosqichida bo'lib, foydalanuvchilarga qulay va samarali ta'lim tajribasini taqdim etishga intilmoqdaman.",
     ],
   },
+  {
+    type: "work",
+    title: "ProBest Soft",
+    org: "Freelance",
+    period: "2026 May – Hozirgi vaqtda",
+    location: "Uzbekistan, Xorazm",
+    bullets: [
+      "2026 yil May oyida ProBest Softda Freelance sifatida ishlay boshladim.",
+      "Bu kompaniyada menning vazifam veb-sayt va interaktiv dasturlar yaratish va qo'llab-quvvatlashdir.",
+      "Hozirda Bu loyihani Yakunlash bosqichida bo'lib, foydalanuvchilarga qulay va samarali ta'lim tajribasini taqdim etishga intilmoqdaman.",
+    ],
+  },
 ];
+
+const SHOW_COUNT = 3;
 
 export default function Experience() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [showAll, setShowAll] = useState(false);
+
+  const displayed = showAll ? timeline : timeline.slice(0, SHOW_COUNT);
 
   return (
     <section
@@ -75,7 +92,7 @@ export default function Experience() {
             <div className="absolute left-[7px] md:left-[11px] top-2 bottom-2 w-px bg-cream-200 dark:bg-ink-600" />
 
             <div className="space-y-10">
-              {timeline.map((item, i) => (
+              {displayed.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -16 }}
@@ -138,6 +155,19 @@ export default function Experience() {
               ))}
             </div>
           </div>
+
+          {timeline.length > SHOW_COUNT && (
+            <div className="mt-10 text-center">
+              <button
+                onClick={() => setShowAll((prev) => !prev)}
+                className="btn-outline"
+              >
+                {showAll
+                  ? "Kamroq ko'rsatish"
+                  : `Hammasini ko'rsatish (${timeline.length} ta)`}
+              </button>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
