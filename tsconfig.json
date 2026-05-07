@@ -16,6 +16,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public/projectIMages", "public/index.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
