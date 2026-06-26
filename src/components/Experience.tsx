@@ -162,6 +162,7 @@ export default function Experience() {
                 onClick={() => setShowAll((prev) => !prev)}
                 className="btn-outline"
               >
+                
                 {showAll
                   ? "Kamroq ko'rsatish"
                   : `Hammasini ko'rsatish (${timeline.length} ta)`}
