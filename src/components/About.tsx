@@ -48,7 +48,7 @@ export default function About() {
               <div className="flex flex-wrap gap-4 pt-2">
                 <div className="flex items-center gap-2 text-sm text-ink-500 dark:text-cream-200/50">
                   <MapPin size={14} className="text-accent" />
-                  Uzbekistan, Xorazm
+                  Uzbekistan, Toshkent
                 </div>
                 <div className="flex items-center gap-2 text-sm text-ink-500 dark:text-cream-200/50">
                   <Briefcase size={14} className="text-accent" />

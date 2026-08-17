@@ -86,7 +86,7 @@ export default function Hero() {
               ))}
               <span className="hidden sm:block w-px h-4 bg-ink-200 dark:bg-ink-600 mx-1" />
               <span className="font-mono text-[10px] sm:text-xs text-ink-400 dark:text-cream-200/40 tracking-wider break-all sm:break-normal text-center lg:text-left">
-                +998 (97) 606-90-26
+                +998 (20) 030 90-26
               </span>
             </div>
           </motion.div>

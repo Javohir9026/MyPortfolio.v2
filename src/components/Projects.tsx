@@ -25,7 +25,7 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {displayed.map((project, i) => {
               const isGithubPrivate = project.githubAccess === "private";
-
+              const isLiveAccess = project.liveAcess === false;
               return (
                 <motion.div
                   key={project.id}
@@ -48,11 +48,10 @@ export default function Projects() {
                         {String(i + 1).padStart(2, "0")}
                       </div>
                       <span
-                        className={`absolute right-4 top-4 rounded-full px-3 py-1 text-[11px] font-mono font-semibold backdrop-blur ${
-                          project.InProgress
-                            ? "bg-amber-100/90 text-amber-800 dark:bg-amber-400/15 dark:text-amber-200"
-                            : "bg-emerald-100/90 text-emerald-800 dark:bg-emerald-700/30 dark:text-emerald-200"
-                        }`}
+                        className={`absolute right-4 top-4 rounded-full px-3 py-1 text-[11px] font-mono font-semibold backdrop-blur ${project.InProgress
+                          ? "bg-amber-100/90 text-amber-800 dark:bg-amber-400/15 dark:text-amber-200"
+                          : "bg-emerald-100/90 text-emerald-800 dark:bg-emerald-700/30 dark:text-emerald-200"
+                          }`}
                       >
                         {project.InProgress ? "Jarayonda" : "Faol"}
                       </span>
@@ -84,15 +83,27 @@ export default function Projects() {
                             <Github size={15} />
                           </a>
                         )}
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="Live demo"
-                          className="w-8 h-8 flex items-center justify-center rounded-full text-ink-400 dark:text-cream-200/40 hover:text-ink-900 dark:hover:text-cream-100 hover:bg-cream-200 dark:hover:bg-ink-600 transition-all duration-200"
-                        >
-                          <ExternalLink size={15} />
-                        </a>
+                        {isLiveAccess ? (
+                          <span
+                            aria-label="Live Access Disabled"
+                            title="Live access disabled"
+                            className="w-8 h-8 flex items-center justify-center rounded-full text-ink-300 dark:text-cream-200/25 bg-cream-100 dark:bg-ink-700/50 cursor-not-allowed"
+                          >
+                            <ExternalLink size={15} />
+                          </span>
+                        ) : (
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Live demo"
+                            className="w-8 h-8 flex items-center justify-center rounded-full text-ink-400 dark:text-cream-200/40 hover:text-ink-900 dark:hover:text-cream-100 hover:bg-cream-200 dark:hover:bg-ink-600 transition-all duration-200"
+                          >
+                            <ExternalLink size={15} />
+                          </a>
+                        )}
+
+
                       </div>
                     </div>
 
@@ -124,7 +135,7 @@ export default function Projects() {
             </button>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }

@@ -12,7 +12,7 @@ const socials = [
   },
   { icon: Send, href: "https://t.me/Javohir_Amanbayev", label: "Telegram" },
   { icon: Mail, href: "mailto:amanbayevjavohir94@gmail.com", label: "Email" },
-  { icon: Phone, href: "tel:+998976069026", label: "Phone" },
+  { icon: Phone, href: "tel:+998200309026", label: "Phone" },
 ];
 
 export default function Contact() {

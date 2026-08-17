@@ -7,6 +7,7 @@ export interface Project {
   githubAccess: "public" | "private";
   InProgress: boolean;
   live: string;
+  liveAcess: boolean
   image?: string;
   featured: boolean;
 }
@@ -14,6 +15,52 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "NavoiyAzot - Mes",
+    image: "/NavoiyAzotMes.png",
+    description:
+      "React + TypeScript da yozilgan zamonaviy UI, Backend Api bilan to'liq CRUD, Custom Icon va Custom Select Inputlar bilan ishlangan qulay interfeysga ega. WebSocket orqali Malumotlar chiqarilgan.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Shadcn UI",
+      "Tailwind CSS",
+      "Lucide-React",
+      "CSS Variables",
+      "WebSocket",
+      "react-query",
+    ],
+    github: "",
+    githubAccess: "private",
+    InProgress: true,
+    live: "",
+    liveAcess: false,
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Hr Erp - CRM system",
+    image: "/HrErp.jpg",
+    description:
+      "React + TypeScript da yozilgan zamonaviy CRM sistema. Custom UI componentlari bilan ishlangan, Backend Api To'liq CRUD, Custom Iconlardan foydalanilgan. To'liq responsive va foydalanuvchi uchun qulay interfeysga ega CRM sistema",
+    tech: [
+      "React",
+      "TypeScript",
+      "Shadcn UI",
+      "Tailwind CSS",
+      "Lucide-React",
+      "CSS Variables",
+      "react-query",
+      "WebSocket",
+    ],
+    github: "",
+    githubAccess: "private",
+    InProgress: false,
+    live: "",
+    liveAcess: false,
+    featured: true,
+  },
+  {
+    id: 3,
     title: "Nasiya Savdo - Admin Panel",
     image: "/NasiyaSavdoAdminka.png",
     description:
@@ -30,10 +77,11 @@ export const projects: Project[] = [
     githubAccess: "public",
     InProgress: false,
     live: "https://nasiya-savdo-admin-panel.vercel.app/",
+    liveAcess: true,
     featured: true,
   },
   {
-    id: 2,
+    id: 4,
     title: "Nasiya Savdo - landing page",
     image: "/NasiyaSavdoLanding.png",
     description:
@@ -50,10 +98,11 @@ export const projects: Project[] = [
     githubAccess: "public",
     InProgress: false,
     live: "https://nasiya-landing-page-qrzr.vercel.app/",
+    liveAcess: true,
     featured: true,
   },
   {
-    id: 3,
+    id: 5,
     title: "Yasin Mebel - Enterprise ERP",
     image: "/YasinMebel.png",
     description:
@@ -70,10 +119,11 @@ export const projects: Project[] = [
     githubAccess: "private",
     InProgress: true,
     live: "https://yasinmebel.uz/",
+    liveAcess: true,
     featured: true,
   },
   {
-    id: 4,
+    id: 6,
     title: "Pul Hisob - Business Management System",
     image: "/PulHisob.png",
     description:
@@ -89,6 +139,7 @@ export const projects: Project[] = [
     githubAccess: "private",
     InProgress: false,
     live: "https://pulhisob.uz/",
+    liveAcess: true,
     featured: true,
   },
 ];

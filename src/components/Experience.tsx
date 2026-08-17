@@ -29,7 +29,7 @@ const timeline: TimelineItem[] = [
     title: "Najot Ta'lim - START",
     org: "Remote Team",
     period: "2025 - 2026",
-    location: "Remote",
+    location: "Uzbekistan, Remote",
     bullets: [
       "Najot ta'lim start loyihasiga topshirdim va 200 ta dasturchi orasidan tanlab olinib, 3 oylik intensiv amaliyot bosqichida qatnashdim.",
       "3 oy davomida real loyihada qatnashdim va frontend texnologiyalarini amalda qo'llash orqali tajribamni oshirdim.",
@@ -38,10 +38,10 @@ const timeline: TimelineItem[] = [
   },
   {
     type: "work",
-    title: "EduCationHub",
+    title: "Remote Team",
     org: "freelance",
     period: "2026 Yanvar – 2026 Iyul",
-    location: "Uzbekistan, Xorazm",
+    location: "Uzbekistan, Remote",
     bullets: [
       "2026 yil boshidan yangi Start-up EducationHubda Junior Web Developer sifatida ishlay boshladim.",
       "Bu start-up ta'lim sohasida innovatsion yechimlar yaratishga qaratilgan va menning vazifam veb-sayt va interaktiv ta'lim platformasini ishlab chiqish va qo'llab-quvvatlashdir.",
@@ -52,12 +52,25 @@ const timeline: TimelineItem[] = [
     type: "work",
     title: "ProBest Soft",
     org: "Freelance",
-    period: "2026 May – Hozirgi vaqtda",
-    location: "Uzbekistan, Xorazm",
+    period: "2026 Mart – 2026 Iyul",
+    location: "Uzbekistan, Remote",
     bullets: [
-      "2026 yil May oyida ProBest Softda Freelance sifatida ishlay boshladim.",
+      "2026 yil Mart oyida ProBest Softda Freelance sifatida ishlay boshladim.",
       "Bu kompaniyada menning vazifam veb-sayt va interaktiv dasturlar yaratish va qo'llab-quvvatlashdir.",
       "Hozirda Bu loyihani Yakunlash bosqichida bo'lib, foydalanuvchilarga qulay va samarali ta'lim tajribasini taqdim etishga intilmoqdaman.",
+      "Bu Kompaniyada 2 ta katta crm sistema qurdik va bu menga juda ko'p tajriba orttirishga yordam berdi",
+    ],
+  },
+  {
+    type: "work",
+    title: "TenzorSoft",
+    org: "Frontend Developer",
+    period: "2026 Iyul – Present",
+    location: "Uzbekistan, Toshkent",
+    bullets: [
+      "2026 yil Iyul oyida TenzorSoftda Frontend Developer sifatida ishlay boshladim.",
+      "Bu kompaniyada menning vazifam veb-sayt va interaktiv dasturlar yaratish va qo'llab-quvvatlashdir.",
+      "Bu yerda hozir baland tajribali dasturchilar va mutaxasislar bilan birga ishlab kelmoqdaman",
     ],
   },
 ];

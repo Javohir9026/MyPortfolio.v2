@@ -18,7 +18,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     label: 'Ishlab Chiqarish & DevOps',
-    skills: ['Vite', 'Webpack', 'ESLint / Prettier', 'Docker', 'Vercel'],
+    skills: ['Vite', 'Webpack', 'WebSocket', 'ESLint / Prettier', 'Docker', 'Vercel'],
   },
   {
     label: 'Backend & APIlar',
